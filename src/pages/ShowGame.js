@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ed7909dd94c18ed8b17a0facbd95b5dcdebd720a
 import { useState } from 'react';
 
 const ShowGame = (props) => {

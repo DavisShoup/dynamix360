@@ -1,13 +1,13 @@
-import { Link } from 'react';
+import { Link } from 'react-router-dom';
 
-function Header(props) {
+const Header = (props) => {
     return (
         <div>
             <nav className='nav'>
                 <Link to="/" >
                     <div>Home</div>
                 </Link>
-                <Link to="/create" >
+                <Link to="/game" >
                     <div>Create</div>
                 </Link>
                 <Link to="/search" >
