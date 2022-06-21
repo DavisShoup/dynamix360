@@ -15,5 +15,21 @@ code {
 .map-container {
   width: 70%;
   height: 70vh;
-  margin: auto;
+}
+
+.container {
+  display: flex;
+  height: 70vh;
+}
+
+.controls {
+  width: 20%;
+  padding: 1rem;
+  background: black;
+  color: white;
+}
+
+.map {
+  width: 80%;
+  height: 100vh;
 }
