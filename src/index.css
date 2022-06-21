@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.map-container {
+  width: 70%;
+  height: 70vh;
+}
+
+.container {
+  display: flex;
+  height: 70vh;
+}
+
+.controls {
+  width: 20%;
+  padding: 1rem;
+  background: black;
+  color: white;
+}
+
+.map {
+  width: 80%;
+  height: 100vh;
+}
