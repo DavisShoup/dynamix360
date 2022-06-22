@@ -15,8 +15,8 @@ const ShowGame = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, sport, difficulty, location, description, _id } = editGame;
-        props.updateGame({ name, sport, difficulty, location, description }, _id);
+        const { name, sport, difficulty, location, date, time, description, _id } = editGame;
+        props.updateGame({ name, sport, difficulty, location, date, time, description }, _id);
     }
 
     const handleRemoveGame = (id) => {
@@ -25,6 +25,14 @@ const ShowGame = (props) => {
     }
 
     return(
+        <>
+        <h1>{editGame.name}</h1>
+        <p>Sport: {editGame.sport}</p>
+        <p>Difficulty: {editGame.difficulty}</p>
+        <p>Location: {editGame.locaiton}</p>
+        <p>Date: {editGame.date}</p>
+        <p>Time: {editGame.time}</p>
+        <p>Description: {editGame.description}</p>
         <section>
             <form onSubmit={handleSubmit}>
                 <input 
@@ -56,6 +64,20 @@ const ShowGame = (props) => {
                 type="text" 
                 />
                 <input 
+                value={editGame.date}
+                onChange={handleChange}
+                placeholder="date"
+                name="date" 
+                type="text" 
+                />
+                <input 
+                value={editGame.time}
+                onChange={handleChange}
+                placeholder="time"
+                name="time" 
+                type="text" 
+                />
+                <input 
                 value={editGame.description}
                 onChange={handleChange}
                 placeholder="description"
@@ -64,9 +86,10 @@ const ShowGame = (props) => {
                 />
                 <input 
                 type="submit" 
-                value="Create Game" />
+                value="Update" />
             </form>
-        </section>   
+        </section>
+        </>  
     )
 }
 
