@@ -15,8 +15,8 @@ code {
 .map-container {
   width: 70%;
   height: 70vh;
+  margin: auto;
 }
-
 .container {
   display: flex;
   height: 70vh;

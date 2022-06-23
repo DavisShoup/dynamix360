@@ -32,7 +32,7 @@ const Main = (props) => {
 
     const updateGame = async (updatedGame, id) => {
         await fetch(URL + id, {
-            methond: 'PUT',
+            method: 'PUT',
             headers: {
                 'Content-type': 'Application/json'
             },

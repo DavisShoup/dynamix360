@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ed7909dd94c18ed8b17a0facbd95b5dcdebd720a
 import { useState } from 'react';
 
 const ShowGame = (props) => {
+    
     const id = props.match.params.id;
     const event = props.game.find(p => p._id === id);
 
@@ -30,7 +26,10 @@ const ShowGame = (props) => {
     }
 
     return(
+        <div className='game'>
+            <h1>{event.name}</h1>
         <section>
+            <button onClick={() => handleRemoveGame(event._id)}>Delete</button>
             <form onSubmit={handleSubmit}>
                 <input 
                 value={editGame.name} 
@@ -69,10 +68,10 @@ const ShowGame = (props) => {
                 />
                 <input 
                 type="submit" 
-                value="Create Game" />
+                value="Update" />
             </form>
         </section>   
+        </div>
     )
 }
-
 export default ShowGame
