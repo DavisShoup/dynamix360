@@ -28,49 +28,68 @@ const ShowGame = (props) => {
     return(
         <div className='game'>
             <h1>{event.name}</h1>
-        <section>
-            <button onClick={() => handleRemoveGame(event._id)}>Delete</button>
-            <form onSubmit={handleSubmit}>
-                <input 
-                value={editGame.name} 
-                onChange={handleChange} 
-                placeholder="name"
-                name="name" 
-                type="text" 
-                />
-                <input 
-                value={editGame.sport} 
-                onChange={handleChange}
-                placeholder="sport" 
-                name="sport" 
-                type="text" 
-                />
-                <input 
-                value={editGame.difficulty}
-                onChange={handleChange}
-                placeholder="difficulty"
-                name="difficulty" 
-                type="text" 
-                />
-                <input 
-                value={editGame.location}
-                onChange={handleChange}
-                placeholder="location"
-                name="location" 
-                type="text" 
-                />
-                <input 
-                value={editGame.description}
-                onChange={handleChange}
-                placeholder="description"
-                name="description" 
-                type="text"
-                />
-                <input 
-                type="submit" 
-                value="Update" />
-            </form>
-        </section>   
+            <p>{event.sport}</p>
+            <p>{event.location}</p>
+
+            {props.user &&
+                    <section>
+                        <button onClick={() => handleRemoveGame(event._id)}>Delete</button>
+                        <form onSubmit={handleSubmit}>
+                            <input 
+                            value={editGame.name} 
+                            onChange={handleChange} 
+                            placeholder="name"
+                            name="name" 
+                            type="text" 
+                            />
+                            <input 
+                            value={editGame.sport} 
+                            onChange={handleChange}
+                            placeholder="sport" 
+                            name="sport" 
+                            type="text" 
+                            />
+                            <input 
+                            value={editGame.difficulty}
+                            onChange={handleChange}
+                            placeholder="difficulty"
+                            name="difficulty" 
+                            type="text" 
+                            />
+                            <input 
+                            value={editGame.location}
+                            onChange={handleChange}
+                            placeholder="location"
+                            name="location" 
+                            type="text" 
+                            />
+                            <input 
+                            value={editGame.description}
+                            onChange={handleChange}
+                            placeholder="description"
+                            name="description" 
+                            type="text"
+                            />
+                            <input 
+                            value={editGame.date}
+                            onChange={handleChange}
+                            placeholder="date"
+                            name="date" 
+                            type="text"
+                            />
+                            <input 
+                            value={editGame.time}
+                            onChange={handleChange}
+                            placeholder="time"
+                            name="time" 
+                            type="text"
+                            />
+                            <input 
+                            type="submit" 
+                            value="Update" />
+                        </form>
+                    </section>   
+              }
         </div>
     )
 }

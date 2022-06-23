@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -12,24 +13,106 @@ code {
     monospace;
 }
 
-.map-container {
-  width: 70%;
-  height: 70vh;
-  margin: auto;
-}
-.container {
+ .nav {
+    display: flex;
+    justify-content: space-between ;
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+ }
+ 
+ li {
+  margin-right: 1.5rem;
+  list-style: none;
+  cursor: pointer;
+ }
+
+ .profile-list {
   display: flex;
-  height: 70vh;
+  align-items: center;
+ }
+
+
+ .container {
+  width: 80vw;
+  height: 50vw;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd,
+              -1px -1px 10px #ddd,
+              1px -1px 10px #ddd,
+              -1px 1px 10px #ddd;
+        }
+
+        .sidebar {
+          width: 50%;
+          background: url('https://images.unsplash.com/photo-1562552052-4e9f2d8e8a4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+          background-size:cover;
+          background-repeat: no-repeat;
+          border-radius: 10px 0 0 10px;
+      }   
+
+
+      .new  {
+        width: 50%;
+        background: 	#ea580c;
+        border-radius: 0 10px 10px 0;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow: auto;
+
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px 0;
+
+  }
+
+  .create-input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgb(229, 228, 228);
+    border-radius: 5px;
 }
 
-.controls {
-  width: 20%;
-  padding: 1rem;
-  background: black;
-  color: white;
+
+.create-header {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  color: black;
+  border-bottom: 2px solid rgb(207, 235, 244);
+  word-spacing: 4px;
 }
 
-.map {
-  width: 80%;
-  height: 100vh;
+.create-input:focus {
+  outline: 1px solid transparent;
+  border: 1px solid #f9f9f9;
+}
+
+.create-input[type='submit'] {
+  width: 100%;
+  height: 50px;
+  background: var(--bright-orange);
+  box-shadow: 2px 2px var(--light-green);
+  font-family: 'Oswald';
+  font-size: 1.3em;
+  color: black;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+.create-input[type="submit"]:hover {
+  cursor: pointer;
+  background:  #12232e;
+  box-shadow: 2px 2px  #b1dbfb;
+  color: #b1dbfb;
 }
