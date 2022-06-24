@@ -10,7 +10,7 @@ import Home from '../pages/Home';
 
 const Main = (props) => {
     const [ game, setGame ] = useState(null);
-
+            // heroku link goes here when deployed
     const URL = 'http://localhost:4000/game/'
 
     const getGame = async () => {
@@ -20,6 +20,7 @@ const Main = (props) => {
     }
 
     const createGame = async (event) => {
+        if(!props.user) return;
         await fetch(URL, {
             method: 'POST',
             headers: {
@@ -31,8 +32,9 @@ const Main = (props) => {
     }
 
     const updateGame = async (updatedGame, id) => {
+        if(!props.user) return;
         await fetch(URL + id, {
-            methond: 'PUT',
+            method: 'PUT',
             headers: {
                 'Content-type': 'Application/json'
             },
@@ -42,13 +44,14 @@ const Main = (props) => {
     }
 
     const deleteGame = async (id) => {
+        if(!props.user) return;
         await fetch(URL + id, { method: 'DELETE'});
         getGame();
     }
 
     useEffect(() => {
         getGame();
-    }, []);
+    }, [props.user]);
 
     return (
         <main>
@@ -57,12 +60,14 @@ const Main = (props) => {
             </Route>
             <Route exact path='/game'>
                 <Create 
+                user={props.user}
                 game={game}
                 createGame={createGame}
                 />
             </Route>
             <Route path="/game/:id" render={(rp) => (
                 <ShowGame
+                user={props.user}
                 {...rp}
                 game={game}
                 updateGame={updateGame}
