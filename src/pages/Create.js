@@ -44,15 +44,15 @@ const history = useHistory()
                 {props.user &&
                 <h1 className="create-header">CREATE NEW GAME</h1>
                 }
-                {!props.user &&
+                {/* {!props.user &&
                 <>                   
                     <h1>LOGIN TO CREATE A GAME!!</h1>
                     <div className="error">
                         <img  src="https://media2.giphy.com/media/l0FeaAqTD4l8fMR68/200.webp?cid=ecf05e476y2ra6oeg2l3qnkv6mcpxma52abizeuottjskvkw&rid=200.webp&ct=g" style={errorStyles} alt="" />
                     </div>
                  </>
-                }
-            { props.user &&
+                } */}
+            {/* { props.user && */}
             <form onSubmit={handleSubmit}>
                 <fieldset className="game-info">
                 <input className="create-input"
@@ -110,7 +110,7 @@ const history = useHistory()
                 </fieldset>
             </form>
        
-}
+{/* } */}
         </div>
         </div>
    </section>  

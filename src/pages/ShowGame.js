@@ -27,7 +27,7 @@ const ShowGame = (props) => {
 
     return(
         <div className='game'>
-            {!props.user &&
+            {/* {!props.user &&
             <>
             <div className='non-user-show'>
                 <h1>{event.name}</h1>
@@ -37,7 +37,7 @@ const ShowGame = (props) => {
                 </div>
             </>
             }
-            {props.user &&
+            {props.user && */}
             <>
             <div className='show-game-background'>
                 <h1>{event.name}</h1>
@@ -51,9 +51,9 @@ const ShowGame = (props) => {
                 
                 </div>
             </>
-                }
+                {/* } */}
 
-            {props.user &&
+            {/* {props.user && */}
                     <section>
                         <div className='edit-container'>
                             <div className='edit-sidebar'></div>
@@ -118,7 +118,7 @@ const ShowGame = (props) => {
                         </div>
                         </div>
                     </section>   
-              }
+              {/* } */}
         </div>
     )
 }
