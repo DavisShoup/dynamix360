@@ -13,7 +13,7 @@ function Header(props) {
         <div>
             <nav className='nav'>
                 <Link to="/" >
-                    <div>Home</div>
+                    <div className='home'>Home</div>
                 </Link>
                 <Link to="/game" >
                     <div>Create</div>
@@ -29,13 +29,13 @@ function Header(props) {
                         props.user 
                         ?  (
                             <>
-                                <li className='profile-list'>Welcome, {props.user.displayName}
+                                <li className='profile-list'>Welcome, {props.user.displayName} 
                                 <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png' style={photoStyles} alt={props.user.displayName}></img>
                                 </li>
-                                <li onClick={logout}>Logout</li>
+                                <li onClick={logout} style={{ cursor: 'pointer' }}>Logout</li>
                             </>
                          )
-                        :   <li onClick={login}>Login</li>  
+                        :   <li onClick={login} style={{ cursor: 'pointer' }}>Login</li>  
                     }
                 </ul>
             </nav>

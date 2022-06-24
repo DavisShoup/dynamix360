@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 import { Link } from "react-router-dom"
+import Map from "../components/Map";
 // import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
 // import { Wrapper, Status } from '@googlemaps/react-wrapper'
 // import Map from '../components/Map.js'
@@ -48,12 +49,16 @@ const Search = ({game}) => {
     // }
 
     return(
-        <div>
+        <div className="search-container">
+
+            <h1>All Games</h1>
+            <Map />
             {/* <Wrapper apiKey='AIzaSyAat5B6nBVMGYxMVw4jSWxtNiJopiczj4E'>
                 {Map()}
             </Wrapper> */}
                 {gameInfo()}
-        </div>
+                </div>
+
     )
 };
 

@@ -27,67 +27,96 @@ const ShowGame = (props) => {
 
     return(
         <div className='game'>
-            <h1>{event.name}</h1>
-            <p>{event.sport}</p>
-            <p>{event.location}</p>
+            {!props.user &&
+            <>
+            <div className='non-user-show'>
+                <h1>{event.name}</h1>
+                <p><b>Sport:</b><br/>{event.sport}</p>
+                <p><b>Location:</b><br/>{event.location}</p>
+                <p className='non-user-message'><b>LOGIN TO SEE MORE INFO ABOUT THE GAME!!</b><br/></p>
+                </div>
+            </>
+            }
+            {props.user &&
+            <>
+            <div className='show-game-background'>
+                <h1>{event.name}</h1>
+                <p><b>Sport:</b><br/>{event.sport}</p>
+                <p><b>Location:</b><br/>{event.location}</p>
+                <p><b>Date:</b><br/>{event.date}</p>
+                <p><b>Time</b>:<br/>{event.time}</p>
+                <p><b>Difficulty:</b><br/>{event.difficulty}</p>
+                <p><b>Description:</b><br/>{event.description}</p>
+                <button onClick={() => handleRemoveGame(event._id)}>Delete</button>
+                
+                </div>
+            </>
+                }
 
             {props.user &&
                     <section>
-                        <button onClick={() => handleRemoveGame(event._id)}>Delete</button>
+                        <div className='edit-container'>
+                            <div className='edit-sidebar'></div>
+                            <div className='edit'>
+                                <h1 className='edit-header'>Edit Game</h1>
                         <form onSubmit={handleSubmit}>
-                            <input 
+                            <fieldset className='edit-info'>
+                            <input className="edit-input"
                             value={editGame.name} 
                             onChange={handleChange} 
                             placeholder="name"
                             name="name" 
                             type="text" 
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.sport} 
                             onChange={handleChange}
                             placeholder="sport" 
                             name="sport" 
                             type="text" 
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.difficulty}
                             onChange={handleChange}
                             placeholder="difficulty"
                             name="difficulty" 
                             type="text" 
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.location}
                             onChange={handleChange}
                             placeholder="location"
                             name="location" 
                             type="text" 
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.description}
                             onChange={handleChange}
                             placeholder="description"
                             name="description" 
                             type="text"
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.date}
                             onChange={handleChange}
                             placeholder="date"
                             name="date" 
                             type="text"
                             />
-                            <input 
+                            <input className="edit-input"
                             value={editGame.time}
                             onChange={handleChange}
                             placeholder="time"
                             name="time" 
                             type="text"
                             />
-                            <input 
+                            <input className="edit-input"
                             type="submit" 
-                            value="Update" />
+                            value="Update Changes" />
+                            </fieldset>
                         </form>
+                        </div>
+                        </div>
                     </section>   
               }
         </div>

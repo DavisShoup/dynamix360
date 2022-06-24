@@ -1,7 +1,13 @@
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 
 const Create = (props) => {
+    const errorStyles = {
+        marginTop: '6em'
+         
+        
+    }
     const [ newGame, setNewGame ] = useState({
         name: "",
         sport: "",
@@ -11,6 +17,8 @@ const Create = (props) => {
         time: "",
         description: "",
     })
+
+const history = useHistory()
 
     const handleChange = (e) => {
         setNewGame({
@@ -23,6 +31,7 @@ const Create = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.createGame(newGame);
+        history.push("/search")
     }
 
     return (
@@ -32,7 +41,17 @@ const Create = (props) => {
             <div className="container">
             <div className="sidebar"></div>
             <div className="new">
+                {props.user &&
                 <h1 className="create-header">CREATE NEW GAME</h1>
+                }
+                {!props.user &&
+                <>                   
+                    <h1>LOGIN TO CREATE A GAME!!</h1>
+                    <div className="error">
+                        <img  src="https://media2.giphy.com/media/l0FeaAqTD4l8fMR68/200.webp?cid=ecf05e476y2ra6oeg2l3qnkv6mcpxma52abizeuottjskvkw&rid=200.webp&ct=g" style={errorStyles} alt="" />
+                    </div>
+                 </>
+                }
             { props.user &&
             <form onSubmit={handleSubmit}>
                 <fieldset className="game-info">
